@@ -18,7 +18,8 @@ This project consists of a Docker honeypot that simulates an FTP server on port 
 * `docker cp honeypot:/honeypot.log ./honeypot.log`
 
 ### Redirect output:
-* You can also redirect the honeypot's output to a local file using the >> operator, for example:
-`sudo docker run --rm -it -p 2121:21 --name honeypot honeypot >> honeypot.txt`
-* Or if you want to see the prompt in real-time while redirecting the output to a file, use the `tee` command:
-`sudo docker run --rm -it -p 2121:21 --name honeypot honeypot | tee honeypot.txt`
+Redirect the output to a file:
+1. `sudo docker run --rm -it -p 2121:21 --name honeypot honeypot >> honeypot.txt`
+
+Redirect the output + real-time prompt:
+1. `sudo docker run --rm -it -p 2121:21 --name honeypot honeypot | tee honeypot.txt`

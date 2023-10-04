@@ -24,7 +24,8 @@ If you wanna launch the honeypot using a quick variable,just add an alias at the
 2. Add the variable to .bashrc:   
       $`echo "alias honeypot='sudo docker run --rm -it -p 2121:21 --name honeypot honeypot'" >> ~/.bashrc`
 3. Launch it (in another terminal, as it will make your actual one useless):  
-      $`honeypot`
+      $`honeypot` (you might have to reboot or just relaunch bash ($`bash`) so it can read the .bashrc again.
+
    
 &nbsp;
 

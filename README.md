@@ -1,4 +1,4 @@
-# Docker Honeypot Project
+# Honeypot Docker
 This project consists of a Docker honeypot that simulates an FTP server on port 21 and logs all activities performed by potential attackers. The honeypot runs in a Docker container, making deployment and execution simple and isolated from the host system.
 
 ### Prerequisites:

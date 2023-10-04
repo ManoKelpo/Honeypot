@@ -17,11 +17,11 @@ $`nc <local IP> 2121`
 
 ### Quick launch using variable:
 If you wanna launch the honeypot using a quick variable,just add an alias at the end of your `~/.bashrc` file (or `~/.zshrc`). 
-1. Build the image if you still haven't:
+1. Build the image if you still haven't:   
    $`sudo docker build -t honeypot /home/kali/desec/Swiss-Army-Knife/Honeypot/`
-3. Add the variable to .bashrc:
+3. Add the variable to .bashrc:   
    $`echo "alias honeypot='sudo docker run --rm -it -p 2121:21 --name honeypot honeypot'" >> ~/.bashrc`
-5. Launch it (in another terminal, as it will make your actual one useless):
+5. Launch it (in another terminal, as it will make your actual one useless):  
    $`honeypot`
 
 ### Copy log file:

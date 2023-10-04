@@ -15,13 +15,45 @@ This project consists of a Docker honeypot that simulates an FTP server on port 
 `nc <local IP> 2121`
 
 
+### Quick launch using variable:
+If you wanna launch the honeypot using a quick variable,just add an alias at the end of your `~/.bashrc` file (or `~/.zshrc`).
+* $`echo "alias honeypot='sudo docker build -t honeypot /home/kali/desec/Swiss-Army-Knife/Honeypot/ && sudo docker run --rm -it -p 2121:21 --name honeypot honeypot'" >> ~/.bashrc`
+
 ### Copy log file:
 1.  `docker cp honeypot:/honeypot.log ./honeypot.log`
 
 
 ### Redirect output to a file:
+Just use `>> file.txt` after the command.
 1. `sudo docker run --rm -it -p 2121:21 --name honeypot honeypot >> honeypot.txt`
 
 
 ### Redirect the output while show real-time prompt:
 1. `sudo docker run --rm -it -p 2121:21 --name honeypot honeypot | tee honeypot.txt`
+
+
+### Some Docker utilities:
+* List images: `sudo docker image ls`
+* Remove image: `sudo docker rmi honeypot -f`
+* Remove trash: `sudo docker image prune`
+* Stop running container: `sudo docker stop honeypot`
+* Remove container: `sudo docker rm honeypot -f`
+
+### Can't quit, what to do?
+If you can't quit using `ctrl-c`, there are a few alternatives you can tr
+* Send to background, foreground, then ctrl-c:   
+    `ctrl-z` > $`fg` > `ctrl-c`
+  
+* Send to background and kill it:   
+    `ctrl-z` > $`jobs -a` > $`$ill -9 <service_pid_number>`
+
+* Stop the containeer:   
+    Open another terminal > $`sudo docker stop honeypot`
+
+* Stop Docker:   
+    Open another terminal > $`sudo service stop docker` then wait a few seconds.
+
+* KILL Docker:   
+    Open another terminal > $`ps -a` > find com.docker.cli PID number > `sudo kill -a <pid_number>` > wait a few seconds.
+
+* Pull out the power cable.

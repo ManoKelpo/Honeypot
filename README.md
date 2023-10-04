@@ -11,7 +11,7 @@ This project consists of a Docker honeypot that simulates an FTP server on port 
   `sudo docker build -t honeypot ./`
 3. Run a container using the image you've just created - 
   `sudo docker run --rm -it -p 2121:21 --name honeypot honeypot`
-4. Test the honeypot from another terminal (you'll know it's ready when it shows the FTP banneræ
+4. Test the honeypot from another terminal (you'll know it's ready when it shows the FTP banner
   `nc <local IP> 2121`
 
 ### Copy log file:

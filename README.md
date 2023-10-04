@@ -6,19 +6,19 @@ This project consists of a Docker honeypot that simulates an FTP server on port 
 
 ### Usage:
 1. Clone this repo - 
-  `https://github.com/ManoKelpo/Honeypot-Docker.git`
-2. Inside the repo directory, build the docker image - 
-  `sudo docker build -t honeypot ./`
-3. Run a container using the image you've just created - 
-  `sudo docker run --rm -it -p 2121:21 --name honeypot honeypot`
-4. Test the honeypot from another terminal (you'll know it's ready when it shows the FTP banner
-  `nc <local IP> 2121`
+`https://github.com/ManoKelpo/Honeypot-Docker.git`
+3. Inside the repo directory, build the docker image - 
+`sudo docker build -t honeypot ./`
+4. Run a container using the image you've just created - 
+`sudo docker run --rm -it -p 2121:21 --name honeypot honeypot`
+5. Test the honeypot from another terminal (you'll know it's ready when it shows the FTP banner
+`nc <local IP> 2121`
 
 ### Copy log file:
 * `docker cp honeypot:/honeypot.log ./honeypot.log`
 
 ### Redirect output:
 * You can also redirect the honeypot's output to a local file using the >> operator, for example:
-  `sudo docker run --rm -it -p 2121:21 --name honeypot honeypot >> honeypot.txt`
+`sudo docker run --rm -it -p 2121:21 --name honeypot honeypot >> honeypot.txt`
 * Or if you want to see the prompt in real-time while redirecting the output to a file, use the `tee` command:
-  `sudo docker run --rm -it -p 2121:21 --name honeypot honeypot | tee honeypot.txt`
+`sudo docker run --rm -it -p 2121:21 --name honeypot honeypot | tee honeypot.txt`

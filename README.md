@@ -5,13 +5,13 @@ This project consists of a Docker honeypot that simulates an FTP server on port 
 * Docker installed on your machine. You can download and follow the installation instructions here: [Get-Docker](https://docs.docker.com/get-docker/).
 
 ### Usage:
-1. Clone the repo-  
+1. Clone the repo:  
 `https://github.com/ManoKelpo/Honeypot-Docker.git`
-3. Build the image -  
+3. Build the image:
 `sudo docker build -t honeypot ./`
-4. Run the container -  
+4. Run the container: 
 `sudo docker run --rm -it -p 2121:21 --name honeypot honeypot`
-5. When it shows the "Listening on ..." message, it's time to test   
+5. When it shows the "Listening on ..." message, it's time to test: 
 `nc <local IP> 2121`
 
 ### Copy log file:

@@ -53,20 +53,31 @@ Use the GNU `tee` utility
   
 &nbsp;
 ### Can't quit, what to do?
-If you can't quit using `ctrl-c`, there are a few alternatives you can tr
+It can happen sometimes that will not be able to quit the container with ´ctrl-c´, due to docker not handling correctly the SIGNIT command.
+If this happens, there are some alternatives you can use to close the container:   
 * Send to background, foreground, then ctrl-c:   
     `ctrl-z` > $`fg` > `ctrl-c`
   
 * Send to background and kill it:   
     `ctrl-z` > $`jobs -a` > $`kill -9 <service_pid_number>`
 
-* Stop the containeer:   
-    Open another terminal > $`sudo docker stop honeypot`
+* Stop the container:   
+    Open another terminal > $`sudo docker stop honeypot` > wait a few seconds.
 
-* Stop Docker:   
-    Open another terminal > $`sudo service stop docker` then wait a few seconds.
+* Stop Docker service:   
+    Open another terminal > $`sudo service stop docker` > wait a few seconds.
 
 * KILL Docker:   
     Open another terminal > $`ps -a` > find com.docker.cli PID number > `sudo kill -a <pid_number>` > wait a few seconds.
 
+* Logout and login.
+
+* Reboot
+
 * Pull the power cable out.
+
+* Format
+
+* Destroy device
+
+

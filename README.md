@@ -17,9 +17,8 @@ This project consists of a Docker honeypot that simulates an FTP server on port 
 ### Copy log file:
 * `docker cp honeypot:/honeypot.log ./honeypot.log`
 
-### Redirect output:
-Redirect the output to a file:
-1. `sudo docker run --rm -it -p 2121:21 --name honeypot honeypot >> honeypot.txt`
+### Redirect output to a file:
+`sudo docker run --rm -it -p 2121:21 --name honeypot honeypot >> honeypot.txt`
 
-Redirect the output + real-time prompt:
-1. `sudo docker run --rm -it -p 2121:21 --name honeypot honeypot | tee honeypot.txt`
+### Redirect the output while show real-time prompt:
+`sudo docker run --rm -it -p 2121:21 --name honeypot honeypot | tee honeypot.txt`

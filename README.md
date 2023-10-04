@@ -27,6 +27,7 @@ If you wanna launch the honeypot using a quick variable,just add an alias at the
       $`honeypot`
    
 &nbsp;
+
 ### Copy log file:
 1.  $`docker cp honeypot:/honeypot.log ./honeypot.log`
 
@@ -47,7 +48,8 @@ Use the GNU `tee` utility
 * Remove trash: $`sudo docker image prune`
 * Stop running container: $`sudo docker stop honeypot`
 * Remove container: $`sudo docker rm honeypot -f`
-* 
+
+  
 &nbsp;
 ### Can't quit, what to do?
 If you can't quit using `ctrl-c`, there are a few alternatives you can tr

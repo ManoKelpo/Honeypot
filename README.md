@@ -11,16 +11,28 @@ This project consists of a Docker honeypot that simulates an FTP server on port 
 $`https://github.com/ManoKelpo/Honeypot-Docker.git`
 3. Build the image:   
 $`sudo docker build -t honeypot ./`
+4. Add the variable to .bashrc:
+$`echo "alias honeypot='sudo docker run --rm -it -p 2121:21 --name honeypot honeypot'" >> ~/.bashrc` (or `.zshrc`)
+4. Reboot with $`reboot` or run bash again with $`bash`
+5. Run
 
 ### Installation - pulling from dockerhub (recommended)
-1. Pull the image from dockerhub:
+1. Pull the image from dockerhub:    
    `docker pull raykelp/honeypot:1.0`
+2. Run the container:     
+  $`sudo docker run --rm -it -p 2121:21 --name honeypot raykelp/honeypot:1.0`
+3. Add the variable to .bashrc:    
+  $`echo "alias honeypot='sudo docker run --rm -it -p 2121:21 --name honeypot raykelp/honeypot:1.0'" >> ~/.bashrc` (or `.zshrc`)
+4. Reboot with $`reboot` or run bash again with $`bash`
+5. Run $`honeypot`
 
 &nbsp;
 ### Usage:
 5. Run the container:  
-$`sudo docker run --rm -it -p 2121:21 --name honeypot honeypot` - this part can be skipped (see next section)
-6. When it shows the "Listening on ..." message, it's time to test:  
+*$`honeypot`
+*(if you skipped the variable step): $`sudo docker run --rm -it -p 2121:21 --name honeypot honeypot`
+*(if you installed from dockerhub): $`sudo docker run --rm -it -p 2121:21 --name honeypot raykelp/honeypot:1.0`
+7. When it shows the "Listening on ..." message, it's time to test:  
 $`nc <local IP> 2121`
 
 &nbsp;

@@ -25,16 +25,11 @@ This project consists of a honeypot that simulates an FTP server on port 21 and 
 5. Run $`honeypot`
 
 &nbsp;
-### Usage:
-5. Run the container
-$`honeypot` OR $`sudo docker run --rm -it -p 2121:21 --name honeypot honeypot` - if you installed through docker pull replace the last "honeypot" with `raykelp/honeypot:1.0`
-7. When it shows the "Listening on ..." message, it's time to test:  
-$`nc <local IP> 2121`
+### Testing:
+After running the script, or the container, you will know the server it's up when it shows an "Listening..." message.
+You can test if its working by connecting to it using Netcat `nc`:
+$`nc <local IP> 21`
    
-&nbsp;
-
-### Copy log file:
-1.  $`docker cp honeypot:/honeypot.log ./honeypot.log`
 
 &nbsp;
 ### Redirecting the output to a file:
@@ -54,6 +49,8 @@ If you still want to see the real-time prompt while redirecting the output, use 
 * Remove trash: $`sudo docker image prune`
 * Stop running container: $`sudo docker stop honeypot`
 * Remove container: $`sudo docker rm honeypot -f`
+* Copying files remote > host: $`docker cp container:/root/file.log ./file.log`
+* Copying files host > remote $`docker cp ./file container:/root/file`
 (Remember to differentiate the image from the container - A Docker image is a static, standalone package with application code and dependencies, while a Docker container is a running instance of the image, including the executable environment.)
   
 &nbsp;

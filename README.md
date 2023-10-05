@@ -14,7 +14,7 @@ $`sudo docker build -t honeypot ./`
 
 ### Installation - pulling from dockerhub (recommended)
 1. Pull the image from dockerhub:
-   `docker pull username/projeto:tag`
+   `docker pull raykelp/honeypot:1.0`
 
 &nbsp;
 ### Usage:

@@ -28,21 +28,10 @@ $`echo "alias honeypot='sudo docker run --rm -it -p 2121:21 --name honeypot hone
 
 &nbsp;
 ### Usage:
-5. Run the container:  
-* $`honeypot`
-* (if you skipped the variable step): $`sudo docker run --rm -it -p 2121:21 --name honeypot honeypot` - if you installed through docker pull replace the last "honeypot" with `raykelp/honeypot:1.0`
+5. Run the container
+$`honeypot` OR $`sudo docker run --rm -it -p 2121:21 --name honeypot honeypot` - if you installed through docker pull replace the last "honeypot" with `raykelp/honeypot:1.0`
 7. When it shows the "Listening on ..." message, it's time to test:  
 $`nc <local IP> 2121`
-
-&nbsp;
-### Quick launch using variable:
-1. Build the image if you still haven't:   
-      $`sudo docker build -t honeypot /home/kali/desec/Swiss-Army-Knife/Honeypot/`
-2. Add the variable to .bashrc:   
-      $`echo "alias honeypot='sudo docker run --rm -it -p 2121:21 --name honeypot honeypot'" >> ~/.bashrc` - if you use ZSH, just replace `.bashrc` to `.zshrc`.
-3. Launch it (in another terminal, as it will make your actual one useless):   
-      $`honeypot` (you might have to reboot or just relaunch bash ($`bash`) so it can read the .bashrc again.
-
    
 &nbsp;
 

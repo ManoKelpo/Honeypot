@@ -6,7 +6,7 @@ This project consists of a Docker honeypot that simulates an FTP server on port 
 * Docker installed on your machine. You can download and follow the installation instructions here: [Get-Docker](https://docs.docker.com/get-docker/).
   
 &nbsp;
-### Installation - cloning repo:
+### Installation - METHOD 1:
 1. Clone the repo:  
 $`https://github.com/ManoKelpo/Honeypot-Docker.git`
 3. Build the image:   
@@ -16,7 +16,7 @@ $`echo "alias honeypot='sudo docker run --rm -it -p 2121:21 --name honeypot hone
 4. Reboot with $`reboot` or run bash again with $`bash`
 5. Run
 
-### Installation - pulling from dockerhub (recommended)
+### Installation - METHOD 2 (docker pull) - recommended
 1. Pull the image from dockerhub:    
    `docker pull raykelp/honeypot:1.0`
 2. Run the container:     

@@ -30,8 +30,7 @@ $`echo "alias honeypot='sudo docker run --rm -it -p 2121:21 --name honeypot hone
 ### Usage:
 5. Run the container:  
 * $`honeypot`
-* (if you skipped the variable step): $`sudo docker run --rm -it -p 2121:21 --name honeypot honeypot`
-* (if you installed from dockerhub): $`sudo docker run --rm -it -p 2121:21 --name honeypot raykelp/honeypot:1.0`
+* (if you skipped the variable step): $`sudo docker run --rm -it -p 2121:21 --name honeypot honeypot` - if you installed through docker pull replace the last "honeypot" with `raykelp/honeypot:1.0`
 7. When it shows the "Listening on ..." message, it's time to test:  
 $`nc <local IP> 2121`
 

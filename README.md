@@ -40,7 +40,7 @@ $`nc <local IP> 2121`
       $`sudo docker build -t honeypot /home/kali/desec/Swiss-Army-Knife/Honeypot/`
 2. Add the variable to .bashrc:   
       $`echo "alias honeypot='sudo docker run --rm -it -p 2121:21 --name honeypot honeypot'" >> ~/.bashrc` - if you use ZSH, just replace `.bashrc` to `.zshrc`.
-3. Launch it (in another terminal, as it will make your actual one useless):  
+3. Launch it (in another terminal, as it will make your actual one useless):   
       $`honeypot` (you might have to reboot or just relaunch bash ($`bash`) so it can read the .bashrc again.
 
    
@@ -55,7 +55,7 @@ Just use `>> file.txt` after the command.
 1. $`sudo docker run --rm -it -p 2121:21 --name honeypot honeypot >> honeypot.txt`
 
 &nbsp;
-### Redirect the output while show real-time prompt:
+### Redirect the output while show real-time prompt:   
 Use the GNU `tee` utility  
  1. $`sudo docker run --rm -it -p 2121:21 --name honeypot honeypot | tee honeypot.txt`
 

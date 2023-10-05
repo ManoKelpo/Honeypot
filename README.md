@@ -13,7 +13,7 @@ $`https://github.com/ManoKelpo/Honeypot-Docker.git`
 $`sudo docker build -t honeypot ./`
 4. Add the variable to .bashrc:   
 $`echo "alias honeypot='sudo docker run --rm -it -p 2121:21 --name honeypot honeypot'" >> ~/.bashrc` (or `.zshrc`)
-4. Reboot with $`reboot` or run bash again with $`bash`
+4. Close and open the terminal.
 5. Run $`honeypot`
 
 ### Installation - METHOD 2 (docker pull) - recommended

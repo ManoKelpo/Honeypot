@@ -6,23 +6,29 @@ This project consists of a Docker honeypot that simulates an FTP server on port 
 * Docker installed on your machine. You can download and follow the installation instructions here: [Get-Docker](https://docs.docker.com/get-docker/).
   
 &nbsp;
-### Usage:
+### Installation - cloning repo:
 1. Clone the repo:  
 $`https://github.com/ManoKelpo/Honeypot-Docker.git`
 3. Build the image:   
 $`sudo docker build -t honeypot ./`
-4. Run the container:  
-$`sudo docker run --rm -it -p 2121:21 --name honeypot honeypot`
-5. When it shows the "Listening on ..." message, it's time to test:  
+
+### Installation - pulling from dockerhub (recommended)
+1. Pull the image from dockerhub:
+   `docker pull username/projeto:tag`
+
+&nbsp;
+### Usage:
+5. Run the container:  
+$`sudo docker run --rm -it -p 2121:21 --name honeypot honeypot` - this part can be skipped (see next section)
+6. When it shows the "Listening on ..." message, it's time to test:  
 $`nc <local IP> 2121`
 
 &nbsp;
 ### Quick launch using variable:
-If you wanna launch the honeypot using a quick variable,just add an alias at the end of your `~/.bashrc` file (or `~/.zshrc`). 
 1. Build the image if you still haven't:   
       $`sudo docker build -t honeypot /home/kali/desec/Swiss-Army-Knife/Honeypot/`
 2. Add the variable to .bashrc:   
-      $`echo "alias honeypot='sudo docker run --rm -it -p 2121:21 --name honeypot honeypot'" >> ~/.bashrc`
+      $`echo "alias honeypot='sudo docker run --rm -it -p 2121:21 --name honeypot honeypot'" >> ~/.bashrc` - if you use ZSH, just replace `.bashrc` to `.zshrc`.
 3. Launch it (in another terminal, as it will make your actual one useless):  
       $`honeypot` (you might have to reboot or just relaunch bash ($`bash`) so it can read the .bashrc again.
 

@@ -7,7 +7,8 @@ This project consists of a honeypot that simulates an FTP server on port 21 and 
 
 
 &nbsp;
-### Installation: METHOD 1 - Docker  (recommended)
+## Installation: 
+### METHOD 1 - Docker  (recommended)
 0. Install Docker:
    [Get-Docker](https://docs.docker.com/get-docker/).
 1. Pull the image from dockerhub:
@@ -21,7 +22,7 @@ This project consists of a honeypot that simulates an FTP server on port 21 and 
 
 
 &nbsp;
-### Installation - METHOD 2:
+### METHOD 2 - Shell script
 1. Clone the repo:
    $`https://github.com/ManoKelpo/Honeypot-Docker.git`
 2. Inside of it, give the script permission to run:

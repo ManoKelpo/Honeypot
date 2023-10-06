@@ -62,12 +62,12 @@ If you still want to see the real-time prompt while redirecting the output, use 
   
 &nbsp;
 ### Can't quit, what to do?
-It can happen sometimes that will not be able to quit the container with ´ctrl-c´, due to docker not handling correctly the SIGNIT command.
+It can happen sometimes that you'll not be able to quit the container using ´ctrl-c´, this is due to the container not handling the SIGNIT command properly.
 If this happens, there are some alternatives you can use to close the container:   
 * Send to background, foreground, then ctrl-c:   
     `ctrl-z` > $`fg` > `ctrl-c`
   
-* Send to background and kill it:   
+* Send to background and kill the process:   
     `ctrl-z` > $`jobs -a` > $`kill -9 <service_pid_number>`
 
 * Stop the container:   

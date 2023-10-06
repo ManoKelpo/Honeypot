@@ -5,6 +5,7 @@ This project consists of a honeypot that simulates an FTP server on port 21 and 
 ### Prerequisites:
 * Docker installed on your machine, if you prefer the docker installation. You can download and follow the installation instructions here: [Get-Docker](https://docs.docker.com/get-docker/).
 
+
 &nbsp;
 ### Installation: METHOD 1 - Docker  (recommended)
 0. Install Docker:

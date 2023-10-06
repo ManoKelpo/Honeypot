@@ -26,10 +26,10 @@ $ ./honeypot.sh
 
 &nbsp;
 ### Testing:
-If it shows an "Listening <ip>..." message, the server is up.
-You can test if its working by connecting to it using Netcat `nc`:
+You'll know the server is up when it shows an "Listening \<ip\>..." message.
+Then you can test:
 ```$  nc <local IP> 21```
-   
+
 
 &nbsp;
 ### Redirecting the output to a file:

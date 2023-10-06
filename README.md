@@ -4,7 +4,19 @@ This project consists of a honeypot that simulates an FTP server on port 21 and 
 &nbsp;
 ### Prerequisites:
 * Docker installed on your machine, if you prefer the docker installation. You can download and follow the installation instructions here: [Get-Docker](https://docs.docker.com/get-docker/).
-  
+
+### Install
+ation - Docker Method (recommended)
+1. Pull the image from dockerhub:    
+   `docker pull raykelp/honeypot`
+2. Run the container:     
+  $`sudo docker run --rm -it -p 21:21 --name honeypot raykelp/honeypot`
+3. (OPTIONAL) Add the variable to .bashrc to run anywhere using :    
+  $`echo "alias honeypot='sudo docker run --rm -it -p 2121:21 --name honeypot raykelp/honeypot:1.0'" >> ~/.bashrc` (or `.zshrc`)
+4. Reboot with $`reboot` or run bash again with $`bash`
+5. Run $`honeypot`
+
+
 &nbsp;
 ### Installation - METHOD 1:
 1. Clone the repo:
@@ -14,15 +26,6 @@ This project consists of a honeypot that simulates an FTP server on port 21 and 
 3. Run:
    $`honeypot.sh`
 
-### Installation - Docker Method (recommended)
-1. Pull the image from dockerhub:    
-   `docker pull raykelp/honeypot`
-2. Run the container:     
-  $`sudo docker run --rm -it -p 21:21 --name honeypot raykelp/honeypot`
-3. (OPTIONAL) Add the variable to .bashrc to run anywhere using :    
-  $`echo "alias honeypot='sudo docker run --rm -it -p 2121:21 --name honeypot raykelp/honeypot:1.0'" >> ~/.bashrc` (or `.zshrc`)
-4. Reboot with $`reboot` or run bash again with $`bash`
-5. Run $`honeypot`
 
 &nbsp;
 ### Testing:

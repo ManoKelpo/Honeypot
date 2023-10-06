@@ -91,7 +91,6 @@ If this happens, there are some alternatives you can use to close the container:
     (In another terminal)
     ```
      sudo killall docker
-   
     ```
 * Logout and login.
 

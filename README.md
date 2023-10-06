@@ -10,66 +10,85 @@ This project consists of a honeypot that simulates an FTP server on port 21 and 
 ### Installation: 
 Docker method (recommended):
 ```
-$ docker pull raykelp/honeypot`
-$ sudo docker run --rm -it -p 21:21 --name honeypot raykelp/honeypot `
-$ echo "alias honeypot='sudo docker run --rm -it -p 2121:21 --name honeypot raykelp/honeypot:1.0'" >> ~/.bashrc` (or `.zshrc`)
+$ docker pull raykelp/honeypot
+$ sudo docker run --rm -it -p 21:21 --name honeypot raykelp/honeypot 
+$ echo "alias honeypot='sudo docker run --rm -it -p 2121:21 --name honeypot raykelp/honeypot:1.0'" >> ~/.bashrc
 $ honeypot
 ```
 Manual shell script method:
 ```
-$ git clonehttps://github.com/ManoKelpo/Honeypot-Docker.git
+$ git clone https://github.com/ManoKelpo/Honeypot.git
+$ cd Honeypot
 $ sudo chmod 775 honeypot.sh
+$ echo "alias honeypot='$(pwd)/honeypot.sh'" >> ~/.bashrc
 $ ./honeypot.sh
 ```
 
 &nbsp;
 ### Testing:
-After running the script, or the container, you will know the server it's up when it shows an "Listening..." message.
+If it shows an "Listening <ip>..." message, the server is up.
 You can test if its working by connecting to it using Netcat `nc`:
-`$ nc <local IP> 21`
+```$  nc <local IP> 21```
    
 
 &nbsp;
 ### Redirecting the output to a file:
-You can use `>> file.txt` after the command.
-* `$ ./honeypot.sh >> log.txt`
-* ```$ honeypot >> log.txt```
+It's recommended to use the `>>` operator to redirect the output to a log file.
+* ```$  honeypot >> log.txt```
 
 If you still want to see the real-time prompt while redirecting the output, use the `Tee` utility from GNU:
-* $`./honeypot.sh | tee log.txt`
-* $`honeypot | tee log.txt` - Docker method.
-
+```
+	$  honeypot.sh | tee log.txt
+```
 
 &nbsp;
 ### Some Docker utilities:
-* List images: $`sudo docker image ls`
-* Remove image: $`sudo docker rmi raykelp/honeypot -f`
-* Remove trash: $`sudo docker image prune`
-* Stop running container: $`sudo docker stop honeypot`
-* Remove container: $`sudo docker rm honeypot -f`
-* Copying files remote > host: $`docker cp container:/root/file.log ./file.log`
-* Copying files host > remote $`docker cp ./file container:/root/file`
+* List images: `$ sudo docker image ls`
+* Remove image: `$ sudo docker rmi raykelp/honeypot -f`
+* Remove trash: `$ sudo docker image prune`
+* Stop running container: `$ sudo docker stop honeypot`
+* Remove container: `$ sudo docker rm honeypot -f`
+* Copying files remote to host: `$ docker cp container:/root/file.log ./file.log`
+* Copying files host to remote `$ docker cp ./file container:/root/file`
 (Remember to differentiate the image from the container - A Docker image is a static, standalone package with application code and dependencies, while a Docker container is a running instance of the image, including the executable environment.)
   
 &nbsp;
 ### Can't quit, what to do?
 It can happen sometimes that you'll not be able to quit the container using ´ctrl-c´, this is due to the container not handling the SIGNIT command properly.
 If this happens, there are some alternatives you can use to close the container:   
+
 * Send to background, foreground, then ctrl-c:   
-    `ctrl-z` > $`fg` > `ctrl-c`
+    Press `ctrl-z`
+    ```
+    $ fg 
+    ```
+    Press `ctrl-c`
   
 * Send to background and kill the process:   
-    `ctrl-z` > $`jobs -a` > $`kill -9 <service_pid_number>`
+	1. Press  `ctrl-z`
+	2. 
+	```
+	$ jobs -a
+	$ kill -9 <service_pid_number>`
+	```
 
 * Stop the container:   
-    Open another terminal > $`sudo docker stop honeypot` > wait a few seconds.
+	(In another terminal)
+	```
+	$ sudo docker stop honeypot
+	```
 
 * Stop Docker service:   
-    Open another terminal > $`sudo service stop docker` > wait a few seconds.
-
+	(In another terminal)
+	```
+	$ sudo service stop docker
+	```
 * KILL Docker:   
-    Open another terminal > $`ps -a` > find com.docker.cli PID number > `sudo kill -a <pid_number>` > wait a few seconds.
-
+    (In another terminal)
+    ```
+    $ sudo killall docker
+   
+    ```
 * Logout and login.
 
 * Reboot

@@ -10,18 +10,18 @@ This project consists of a honeypot that simulates an FTP server on port 21 and 
 ### Installation: 
 Docker method (recommended):
 ```
- docker pull raykelp/honeypot
- sudo docker run --rm -it -p 21:21 --name honeypot raykelp/honeypot 
- echo "alias honeypot='sudo docker run --rm -it -p 2121:21 --name honeypot raykelp/honeypot:1.0'" >> ~/.bashrc
- honeypot
+$ docker pull raykelp/honeypot
+$ sudo docker run --rm -it -p 21:21 --name honeypot raykelp/honeypot 
+$ echo "alias honeypot='sudo docker run --rm -it -p 2121:21 --name honeypot raykelp/honeypot:1.0'" >> ~/.bashrc
+$ honeypot
 ```
 Manual shell script method:
 ```
- git clone https://github.com/ManoKelpo/Honeypot.git
- cd Honeypot
- sudo chmod 775 honeypot.sh
- echo "alias honeypot='(pwd)/honeypot.sh'" >> ~/.bashrc
- ./honeypot.sh
+$ git clone https://github.com/ManoKelpo/Honeypot.git
+$ cd Honeypot
+$ sudo chmod 775 honeypot.sh
+$ echo "alias honeypot='$(pwd)/honeypot.sh'" >> ~/.bashrc
+$ ./honeypot.sh
 ```
 
 &nbsp;
@@ -36,11 +36,13 @@ Then you can test:
 &nbsp;
 ### Redirecting the output to a file:
 It's recommended to use the `>>` operator to redirect the output to a log file.
-* ```  honeypot >> log.txt```
+```
+  honeypot >> log.txt
+```
 
 If you still want to see the real-time prompt while redirecting the output, use the `Tee` utility from GNU:
 ```
-	  honeypot.sh | tee log.txt
+  honeypot.sh | tee log.txt
 ```
 
 &nbsp;
@@ -70,8 +72,8 @@ If this happens, there are some alternatives you can use to close the container:
 	1. Press  `ctrl-z`
 	2. 
 	```
-	 jobs -a
-	 kill -9 <service_pid_number>`
+	$ jobs -a
+	$ kill -9 <service_pid_number>`
 	```
 
 * Stop the container:   

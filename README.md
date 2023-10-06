@@ -28,7 +28,9 @@ $ ./honeypot.sh
 ### Testing:
 You'll know the server is up when it shows an "Listening \<ip\>..." message.
 Then you can test:
-```$  nc <local IP> 21```
+```
+$  nc <local IP> 21
+```
 
 
 &nbsp;

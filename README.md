@@ -16,7 +16,7 @@ This project consists of a honeypot that simulates an FTP server on port 21 and 
   $`sudo docker run --rm -it -p 21:21 --name honeypot raykelp/honeypot`
 3. (OPTIONAL) Add the variable to .bashrc to run anywhere using :    
   $`echo "alias honeypot='sudo docker run --rm -it -p 2121:21 --name honeypot raykelp/honeypot:1.0'" >> ~/.bashrc` (or `.zshrc`)
-4. Reboot with $`reboot` or run bash again with $`bash`
+4. Restart bash by closing and opening the terminal or by running $`bash` to launch it again.
 5. Run $`honeypot`
 
 

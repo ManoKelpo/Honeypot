@@ -1,5 +1,9 @@
 FROM ubuntu
 
+
+## Expose the port in the container
+EXPOSE 21
+
 ## Container's internal port (not the the user will access)
 ENV PORT 21
 
